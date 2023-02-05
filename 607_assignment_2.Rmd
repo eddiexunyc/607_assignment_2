@@ -1,0 +1,43 @@
+---
+title: "607_assignment_2"
+output: html_document
+date: "2023-02-05"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This assignment focuses on a creating a database in PostgreSQL and connecting to the R
+
+## Load libraries
+
+```{r}
+library(tidyverse)
+library(DBI)
+library(RPostgres)
+library(RODBC)
+library(odbc)
+```
+
+## Setting up Connectin to PostgreSQL
+
+```{r}
+con <- dbConnect(odbc::odbc(), "pgadmin4")
+
+```
+
+## To see if a table exist in the Database
+```{r}
+dbListTables(con)
+
+```
+
+## Load the table to a dataframe in R
+```{r}
+movie_df <-tbl(con, "fav_movie")
+movie_df
+
+```
