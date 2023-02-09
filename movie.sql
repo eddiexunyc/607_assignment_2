@@ -1,0 +1,1 @@
+CREATE TABLE fav_movie(person_name VARCHAR(25), movie_name VARCHAR(25), movie_rate INT);
